@@ -2,11 +2,11 @@
   "name": "snapchat-clone",
   "version": "1.0.0",
   "license": "MIT",
-  "homepage": "https://towhidkashem.github.io/snapchat-clone",
+  "homepage": "https://github.com/Bhanuprakash20/snapchat-clone/",
   "author": {
     "name": "Towhid Kashem",
-    "email": "tkashem@gmail.com",
-    "url": "https://github.com/TowhidKashem"
+    "email": "bhanueee.prakash@gmail.com",
+    "url": "https://github.com/Bhanuprakash20"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
