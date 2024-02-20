@@ -1,0 +1,29 @@
+name: Upload Artifacts to Artifactory
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install JFrog CLI
+        run: |
+          curl -fL https://getcli.jfrog.io | sh
+
+      - name: Configure JFrog CLI
+        env:
+          ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+          ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
+        run: |
+          jfrog rt config --interactive=false --url=https://your-artifactory-instance-url --user=$ARTIFACTORY_USERNAME --apikey=$ARTIFACTORY_API_KEY
+
+      - name: Upload artifacts to Artifactory
+        run: |
+          jfrog rt u <source-file> <artifactory-repository>
